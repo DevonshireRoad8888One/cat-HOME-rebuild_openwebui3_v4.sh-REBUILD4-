@@ -28,8 +28,7 @@ cd ~/openwebui3
 ./stop.sh
 
 # Check security status
-cd ~/openwebui3
-./check-security.sh
+cd ~/openwebui3 && ./check-security.sh
 
 Security Features (All Enabled)Open WebUI and Ollama bound to localhost only (127.0.0.1)
 Authentication required
