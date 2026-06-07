@@ -128,3 +128,82 @@ cd ~/openwebui3
 # Backup
 cd ~ && tar -czf openwebui3_backup_$(date +%Y-%m-%d).tar.gz openwebui3
 
+Secure Open WebUI v4 - Local Hardened SetupFully Fixed & Self-Contained InstallerThis is a secure, localhost-only installation of Open WebUI with Ollama.Installation / ReinstallationCopy and paste the entire installer script (cat > "$HOME/rebuild_openwebui3_v4.sh" ...) into your terminal.
+Press Enter.
+Run this one command:
+
+bash
+
+chmod +x ~/rebuild_openwebui3_v4.sh && ~/rebuild_openwebui3_v4.sh
+
+The script will install everything and start the server automatically.First LaunchAfter installation finishes:Open your browser and go to:
+http://127.0.0.1:8001
+Create your admin account (this is the only signup allowed).
+
+Quick CommandsAction
+Command
+Start Open WebUI + Ollama
+cd ~/openwebui3 && ./start.sh
+Stop everything
+cd ~/openwebui3 && ./stop.sh
+Check security & status
+cd ~/openwebui3 && ./check-security.sh
+Reinstall / Update
+~/rebuild_openwebui3_v4.sh
+Create Backup
+cd ~ && tar -czf openwebui3_backup_$(date +%Y-%m-%d).tar.gz openwebui3
+
+Security Features (All Enabled)Bound to localhost only (127.0.0.1)
+Authentication required
+New user signups disabled
+CORS restricted to localhost
+Ollama origins restricted
+Secret key stored in protected file (permissions 600)
+.env file locked (600)
+Data, models, logs, and run folders locked (700)
+
+Folder Structure
+
+~/openwebui3/
+├── start.sh                 # Start server
+├── stop.sh                  # Stop server
+├── check-security.sh        # Security & status check
+├── .env                     # Settings (do not edit manually)
+├── .webui_secret_key        # Protected secret key
+├── env1/                    # Python virtual environment
+├── data/                    # Database and user data
+├── models/                  # Ollama models (safe to keep)
+├── logs/                    # Log files
+└── run/                     # PID files
+
+Maintenance GuideUpdate Open WebUI  bash
+
+~/rebuild_openwebui3_v4.sh
+
+Backup (recommended before updates)  bash
+
+cd ~ && tar -czf openwebui3_backup_$(date +%Y-%m-%d).tar.gz openwebui3
+
+Restore Backup  bash
+
+cd ~ && tar -xzf openwebui3_backup_YYYY-MM-DD.tar.gz
+
+View Logs  bash
+
+cd ~/openwebui3
+tail -n 100 logs/ollama.log
+
+Change Version
+Edit OPENWEBUI_VERSION="0.9.6" inside ~/rebuild_openwebui3_v4.sh, then re-run the installer.Important NotesThis setup is designed for local use only (laptop/desktop).
+Do not forward ports 8001 or 11436 unless you add extra protection (reverse proxy + HTTPS).
+Web search / external tools in Open WebUI can still make outbound internet requests.
+
+You’re all set!
+Your Open WebUI is now running securely and cleanly.How to Save This READMERun this command to create the file:bash
+
+cat > ~/openwebui3/README.md << 'EOM'
+[ Paste the entire README content above here ]
+EOM
+
+Would you like me to also create a short desktop shortcut / alias or an update script for even easier maintenance?
+
