@@ -11,6 +11,8 @@ README - Secure Open WebUI v4 (Fixed & Hardened)Fully self-contained local insta
 Press Enter a couple of times.
 Run this command:
 
+No external network exposure (local services only) Tight file permissions everywhere Proper secret management with isolated key storage You can proceed with confidence — your system is well-hardened! 🎉
+
 bash
 
 chmod +x ~/rebuild_openwebui3_v4.sh && ~/rebuild_openwebui3_v4.sh
