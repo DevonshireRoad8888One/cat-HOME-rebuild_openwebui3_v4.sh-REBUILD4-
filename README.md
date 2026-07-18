@@ -1,3 +1,4 @@
+Summarize or extract key points and do a fully detailed analysis and summery in very much detailed manner.
 # cat-HOME-rebuild_openwebui3_v4.sh-REBUILD4-
 cat > "$HOME/rebuild_openwebui3_v4.sh" &lt;&lt;'REBUILD4'
 
